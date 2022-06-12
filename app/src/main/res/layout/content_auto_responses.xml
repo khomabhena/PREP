@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AutoResponses"
+    tools:showIn="@layout/activity_auto_responses">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ivResponse"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardInput"
+        android:visibility="gone"
+        app:cardCornerRadius="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardElevation="1px"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="@id/recyclerView"
+        app:layout_constraintRight_toRightOf="@id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@id/ivResponse"
+        android:minHeight="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivProgress"
+                android:rotation="270"
+                android:src="@drawable/ic_bubble"
+                android:padding="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/etText"
+                android:hint="Type your question"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:inputType="textMultiLine"
+                android:background="@drawable/edit_text_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ivProgress"
+                app:layout_constraintRight_toLeftOf="@id/ivSend"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ivSend"
+                android:onClick="saveToDB"
+                android:src="@drawable/ic_done"
+                android:padding="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivResponse"
+        android:onClick="addQuestion"
+        android:src="@drawable/ic_add_response"
+        android:layout_margin="24dp"
+        android:padding="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:text="Add response"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/ivResponse"
+        app:layout_constraintLeft_toLeftOf="@id/ivResponse"
+        app:layout_constraintRight_toRightOf="@id/ivResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ivQuestion"
+        android:onClick="addQuestion"
+        android:src="@drawable/ic_add"
+        android:layout_margin="24dp"
+        android:padding="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:text="Add question"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/ivQuestion"
+        app:layout_constraintLeft_toLeftOf="@id/ivQuestion"
+        app:layout_constraintRight_toRightOf="@id/ivQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>
